@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ClassGenerator` struct in crate `jni_gen`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ClassGenerator">
+
+    <title>jni_gen::generators::class::ClassGenerator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct ClassGenerator</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.env">env</a><a href="#structfield.class">class</a><a href="#structfield.items">items</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.check">check</a><a href="#method.generate">generate</a><a href="#method.generate_imports">generate_imports</a><a href="#method.generate_struct">generate_struct</a><a href="#method.generate_begin_impl">generate_begin_impl</a><a href="#method.generate_end_impl">generate_end_impl</a><a href="#method.generate_items">generate_items</a></div></div><p class='location'><a href='../../index.html'>jni_gen</a>::<wbr><a href='../index.html'>generators</a>::<wbr><a href='index.html'>class</a></p><script>window.sidebarCurrent = {name: 'ClassGenerator', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>jni_gen</a>::<wbr><a href='../index.html'>generators</a>::<wbr><a href='index.html'>class</a>::<wbr><a class="struct" href=''>ClassGenerator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#9-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ClassGenerator&lt;'a&gt; {
+    env: &amp;'a JNIEnv&lt;'a&gt;,
+    class: <a class="struct" href="../../../jni_gen/class_name/struct.ClassName.html" title="struct jni_gen::class_name::ClassName">ClassName</a>,
+    items: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../jni_gen/enum.ItemWrapperSpec.html" title="enum jni_gen::ItemWrapperSpec">ItemWrapperSpec</a>&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.env" class="structfield small-section-header">
+                           <a href="#structfield.env" class="anchor field"></a>
+                           <span id="env.v" class='invisible'>
+                           <code>env: &amp;'a JNIEnv&lt;'a&gt;</code>
+                           </span></span><span id="structfield.class" class="structfield small-section-header">
+                           <a href="#structfield.class" class="anchor field"></a>
+                           <span id="class.v" class='invisible'>
+                           <code>class: <a class="struct" href="../../../jni_gen/class_name/struct.ClassName.html" title="struct jni_gen::class_name::ClassName">ClassName</a></code>
+                           </span></span><span id="structfield.items" class="structfield small-section-header">
+                           <a href="#structfield.items" class="anchor field"></a>
+                           <span id="items.v" class='invisible'>
+                           <code>items: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../jni_gen/enum.ItemWrapperSpec.html" title="enum jni_gen::ItemWrapperSpec">ItemWrapperSpec</a>&gt;</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../../jni_gen/generators/class/struct.ClassGenerator.html" title="struct jni_gen::generators::class::ClassGenerator">ClassGenerator</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#15-117' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;env: &amp;'a JNIEnv&lt;'a&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;class: <a class="struct" href="../../../jni_gen/class_name/struct.ClassName.html" title="struct jni_gen::class_name::ClassName">ClassName</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;items: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../jni_gen/enum.ItemWrapperSpec.html" title="enum jni_gen::ItemWrapperSpec">ItemWrapperSpec</a>&gt;<br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#16-18' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.check' class="method"><span id='check.v' class='invisible'><code>fn <a href='#method.check' class='fnname'>check</a>(&amp;self) -&gt; <a class="type" href="../../../jni_gen/errors/type.Result.html" title="type jni_gen::errors::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#20-25' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate' class="method"><span id='generate.v' class='invisible'><code>pub fn <a href='#method.generate' class='fnname'>generate</a>(&amp;self) -&gt; <a class="type" href="../../../jni_gen/errors/type.Result.html" title="type jni_gen::errors::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#27-47' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_imports' class="method"><span id='generate_imports.v' class='invisible'><code>fn <a href='#method.generate_imports' class='fnname'>generate_imports</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#49-58' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_struct' class="method"><span id='generate_struct.v' class='invisible'><code>fn <a href='#method.generate_struct' class='fnname'>generate_struct</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#60-67' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_begin_impl' class="method"><span id='generate_begin_impl.v' class='invisible'><code>fn <a href='#method.generate_begin_impl' class='fnname'>generate_begin_impl</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#69-77' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_end_impl' class="method"><span id='generate_end_impl.v' class='invisible'><code>fn <a href='#method.generate_end_impl' class='fnname'>generate_end_impl</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#79-81' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_items' class="method"><span id='generate_items.v' class='invisible'><code>fn <a href='#method.generate_items' class='fnname'>generate_items</a>(&amp;self) -&gt; <a class="type" href="../../../jni_gen/errors/type.Result.html" title="type jni_gen::errors::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/jni_gen/generators/class.rs.html#83-116' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "jni_gen";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

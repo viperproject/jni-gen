@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["generate",""],["generate_method",""],["generate_static",""],["java_method_to_rust",""]]});

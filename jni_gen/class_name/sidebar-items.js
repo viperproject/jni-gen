@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["component_name_to_rust",""]],"struct":[["ClassName",""]]});

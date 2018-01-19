@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["generate_scala_object_getter",""]]});
